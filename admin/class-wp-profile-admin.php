@@ -101,4 +101,30 @@ class WP_Profile_Admin {
 
 	}
 
+	/**
+	 * Register a custom menu page.
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_menu_page() {
+		add_menu_page(
+			__( 'WP Profile', 'wp-profile' ),
+			__( 'WP Profile', 'wp-profile' ),
+			'manage_options',
+			'wp-profile/admin/partials/wp-profile-admin-display.php',
+			'',
+			'dashicons-businessman',
+			109
+		);
+	}
+
+	/**
+	 * Register settings.
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_settings() {
+		register_setting( 'wp-profile-main-options', 'wp_profile_slug', 'strval' );
+	}
+
 }

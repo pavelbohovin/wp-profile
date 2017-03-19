@@ -153,6 +153,11 @@ class WP_Profile {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		// Register admin page WP Profile
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'register_menu_page' );
+		// Register main settings
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
+
 	}
 
 	/**
